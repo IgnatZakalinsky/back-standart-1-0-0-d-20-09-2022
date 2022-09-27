@@ -1,8 +1,12 @@
-import express, {Request, Response} from 'express'
+import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
-import {SETTINGS} from './settings/config'
-import {globalCatch} from './common/errors'
+import {SETTINGS} from './s1-settings/config'
+import {globalCatch} from './s2-common/errors'
+import {testHelloWorld} from './testHelloWorld'
+import {runDB} from './s2-common/mongo'
+
+globalCatch()
 
 export const app = express()
 
@@ -12,17 +16,15 @@ app.use(bodyParser.urlencoded({extended: false}))
 // parse application/json
 app.use(bodyParser.json())
 
-app.get('/', (req: Request, res: Response) => {
-    res.status(200).json({hello: 'nya 1.1'})
-})
+///////////////////////////////
 
-globalCatch()
+app.get('/', testHelloWorld)
 
-// runDB().then(isDB => {
-//     if (!isDB) {
-//         return
-//     }
+runDB().then(isDB => {
+    if (!isDB) {
+        return
+    }
     app.listen(SETTINGS.PORT, () => {
         console.log('listen port: ' + SETTINGS.PORT)
     })
-// })
+})

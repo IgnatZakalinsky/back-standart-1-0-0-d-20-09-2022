@@ -1,46 +1,41 @@
 1) yarn init --yes
 2) yarn add express
-3) yarn add nodemon --dev
-
-4) yarn add typescript ts-node @types/node @types/express --dev
-5) yarn tsc --init
-6) tsconfig.json:
+3) yarn add typescript ts-node @types/node @types/express nodemon --dev
+4) yarn tsc --init
+5) tsconfig.json:
     "rootDir": "./src", // line 29
     "outDir": "./dist", // line 52
 
-7) yarn add cors body-parser dotenv
-8) yarn add @types/body-parser @types/cors --dev
+6) yarn add cors body-parser dotenv
+7) yarn add @types/body-parser @types/cors --dev
 
-9) .gitignore // create
-10) src/settings/config.ts // create
-11) src/common/errors.ts // create, globalCatch()
-12) .env // create
-13) src/index.ts // create
+8) .gitignore // create
+9) src/settings/config.ts // create
+10) src/common/errors.ts // create, globalCatch()
+11) .env // create
+12) src/index.ts // create
 
-14) "scripts": {
+13) "scripts": {
         "build": "tsc",
         "start": "node dist/index.js",
         "watch": "tsc -w",
         "dev": "nodemon dist/index.js"
      }, // yann watch, yarn dev
 
-15) yarn add jest @types/jest ts-jest --dev
-16) jest.config.js // create
-17) package.json:
+14) yarn add jest @types/jest ts-jest --dev
+15) jest.config.js // create
+16) package.json:
 "scripts": {
     ...,
     "test": "jest --config src/jest.config.js",
     "test-w": "jest --config src/jest.config.js --watch",
     "test-c": "jest --config src/jest.config.js --coverage"
 }
-18) del ^
 
-////////////////////////////////////////////
+17) yarn add mongodb express-validator
+18) yarn add mongodb-memory-server --dev
+19) src/common/mongo.ts // create, runDB().then(...
 
-26) yarn add mongodb
-26) yarn add mongodb-memory-server --dev
-31) src/common/mongo.ts // create, runDB().then(...
-
-x26) yarn add express-validator
+20) del ^
 
 
