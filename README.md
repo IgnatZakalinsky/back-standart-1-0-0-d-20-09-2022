@@ -33,6 +33,13 @@ Runs the server
 
 ## Change-logs
 
+04.10.2022:
+
+- supertest
+- cookie-parser
+- nodemailer
+---
+
 27.09.2022:
 
 - req-res test helper

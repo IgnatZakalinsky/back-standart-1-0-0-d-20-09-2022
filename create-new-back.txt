@@ -6,14 +6,14 @@
     "rootDir": "./src", // line 29
     "outDir": "./dist", // line 52
 
-6) yarn add cors body-parser dotenv
-7) yarn add @types/body-parser @types/cors --dev
+6) yarn add cors body-parser dotenv cookie-parser nodemailer
+7) yarn add @types/body-parser @types/cors @types/cookie-parser supertest @types/supertest @types/nodemailer --dev
 
 8) .gitignore // create
 9) src/settings/config.ts // create
 10) src/common/errors.ts // create, globalCatch()
 11) .env // create
-12) src/index.ts // create
+12) src/app.ts // create
 
 13) "scripts": {
         "build": "tsc",
